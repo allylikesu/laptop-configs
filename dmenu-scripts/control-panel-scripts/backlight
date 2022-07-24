@@ -1,0 +1,6 @@
+#!/bin/bash
+inVal=$(echo "supported values: 1 - 255 (current: $(cat /sys/class/backlight/amdgpu_bl0/brightness))" | dmenu -p "enter backlight value:")
+
+re='^[0-9]+$'
+[[ $inVal =~ $re ]] && echo "ok";  echo $inVal > /sys/class/backlight/amdgpu_bl0/brightness
+
