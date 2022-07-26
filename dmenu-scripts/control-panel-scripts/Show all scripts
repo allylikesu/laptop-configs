@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# The same as the main control panel script, but lists all files in $SCRIPTS_DIR.
+
+SCRIPTS_DIR="/home/laptop/dmenu-scripts"
+
+choice=$(ls -X -r  $SCRIPTS_DIR | dmenu -p "all scripts:")
+
+if [ $choice ]; then
+	$SCRIPTS_DIR/"$(echo $choice)"
+else
+	echo "Exiting" && exit 0
+fi

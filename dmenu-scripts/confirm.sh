@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Simple Yes/No confirmation script for dmenu.
 # Usage:  ./confirm.sh [-r, --reverse] [PROMPT] [COMMAND]
@@ -19,4 +19,7 @@ case $1 in
 		;;
 esac
 
-[[ $(echo -e $options | dmenu -p "$prompt") = "Yes" ]] && $cmd
+#[[ $(echo $options | dmenu -p "$prompt") = "Yes" ]] && $cmd
+if [ $(echo $options | dmenu -p "$prompt") = "Yes" ]; then
+	$cmd
+fi

@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# Shows bookmarks (stored in the below array), then opens surf (in tabbed) to that webpage.
+# If an input is not the name of a bookmark, the input will be assumed to be the target URL.o
+
 declare -A bookmarks
 bookmarks[physics]="https://katyisd.instructure.com/courses/498026/modules"
 bookmarks[history]="https://eagleonline.hccs.edu/courses/189060/modules"
@@ -16,7 +20,11 @@ bookmarks[archwiki]="https://wiki.archlinux.org"
 choice=$(printf "%s\n" "${!bookmarks[@]}" | dmenu -p "surf:")
 
 if [ "$choice" ]; then
-	tabbed -fdn tabbed-surf -r 2 surf -isme '' "${bookmarks[$choice]}" &
+	if [ "${bookmarks[$choice]}" = "" ]; then
+		tabbed -fdn tabbed-surf -r 2 surf -isme '' $choice &
+	else
+		tabbed -fdn tabbed-surf -r 2 surf -isme '' "${bookmarks[$choice]}" &
+	fi
 else
 	echo "Exiting" && exit 0
 fi

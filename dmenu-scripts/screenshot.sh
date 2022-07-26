@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/bin/sh
+
+# Take a screenshot, then prompt to rename it.
+# Before screenshot is taken, user may choose to screenshot the whole screen or manually select a window (click) or custom rectangle (click and drag).
 
 IMG_DIR="$HOME/Images/"
 SCRIPTS_DIR="$HOME/dmenu-scripts"
@@ -7,7 +10,7 @@ SCRIPTS_DIR="$HOME/dmenu-scripts"
 
 cd $IMG_DIR
 
-selection=$(echo -e "Entire screen\nManual selection" | dmenu -p "Take a screenshot:")
+selection=$(echo "Entire screen\nManual selection" | dmenu -p "Take a screenshot:")
 
 if [ "$selection" = "Entire screen" ]; then
 	scrot -e "$SCRIPTS_DIR/confirm.sh -r 'Rename \$f?' '$SCRIPTS_DIR/file-rename.sh \$f'"

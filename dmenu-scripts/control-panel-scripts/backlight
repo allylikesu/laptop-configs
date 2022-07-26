@@ -1,6 +1,10 @@
 #!/bin/bash
+
+# Prompt to change the backlight brightness; takes a value from 1-255, then sends that value to $BACKLIGHT_FILE.
+
+BACKLIGHT_FILE="/sys/class/backlight/amdgpu_bl0/brightness"
+
 inVal=$(echo "supported values: 1 - 255 (current: $(cat /sys/class/backlight/amdgpu_bl0/brightness))" | dmenu -p "enter backlight value:")
 
 re='^[0-9]+$'
-[[ $inVal =~ $re ]] && echo "ok";  echo $inVal > /sys/class/backlight/amdgpu_bl0/brightness
-
+[[ $inVal =~ $re ]] && echo "ok" && echo $inVal > $BACKLIGHT_FILE
