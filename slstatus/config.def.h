@@ -71,5 +71,5 @@ static const struct arg args[] = {
 	{ cpu_freq,     " %shz | ",       NULL },
 	//{ netspeed_rx,  "NET %s DOWN ",       "wlp2s0" },
 	//{ netspeed_tx,  "%s UP | ",       "wlp2s0" },
-	{ datetime,     "%s",           "%F %T" },
+	{ datetime,     "%s",           "%a/%b %F %T" },
 };

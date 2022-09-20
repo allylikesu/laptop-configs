@@ -69,7 +69,7 @@ static const struct arg args[] = {
 	{ ram_used,     "RAM %s | ",       NULL },
 	{ cpu_perc,     "CPU %s,",       NULL },
 	{ cpu_freq,     " %shz | ",       NULL },
-	{ netspeed_rx,  "NET %s DOWN ",       "wlp2s0" },
-	{ netspeed_tx,  "%s UP | ",       "wlp2s0" },
-	{ datetime,     "%s",           "%F %T" },
+	//{ netspeed_rx,  "NET %s DOWN ",       "wlp2s0" },
+	//{ netspeed_tx,  "%s UP | ",       "wlp2s0" },
+	{ datetime,     "%s",           "%a/%b %F %T" },
 };
