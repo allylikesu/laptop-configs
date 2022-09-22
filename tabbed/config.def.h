@@ -3,9 +3,9 @@
 /* appearance */
 static const char font[]        = "Ubuntu Mono:size=11";
 static const char* normbgcolor  = "#000000";
-static const char* normfgcolor  = "#cccccc";
-static const char* selbgcolor   = "#000050";
-static const char* selfgcolor   = "#ffffff";
+static const char* normfgcolor  = "#ffffff";
+static const char* selbgcolor   = "#d4d4d4";
+static const char* selfgcolor   = "#000000";
 static const char* urgbgcolor   = "#111111";
 static const char* urgfgcolor   = "#cc0000";
 static const char before[]      = "<";

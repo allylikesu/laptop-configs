@@ -3,7 +3,7 @@
 # Shows a prompt where a user can choose to shutdown or reboot.
 # Note, your user/group must be able to execute /bin/shutdown without a password.
 
-choice=$(echo "shutdown\nreboot" | dmenu -sb "#500000" -p "Power:")
+choice=$(echo "shutdown\nreboot" | dmenu -sb "#cc0000" -sf "#ffffff" -p "Power:")
 
 if [ $choice = "shutdown" ]; then
 	doas shutdown -h now
